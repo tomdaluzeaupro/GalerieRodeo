@@ -7,8 +7,8 @@
 Bienvenus Dans vote compte  {{ app.user.firstname }} !
 <br>
  C'est dan cette page que vous allez pouvoir gérer toutes vos infomations personnelle
- <br>
- - Modifier mon mot de passe 
+ <hr>
+<a href="{{ path('account_password') }}">Modifier mon mot de passe </a>
  - Ajouter mes adresses
  - mes commandes
 {% endblock %}
