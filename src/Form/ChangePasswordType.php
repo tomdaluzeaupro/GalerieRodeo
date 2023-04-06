@@ -17,41 +17,21 @@ class ChangePasswordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', EmailType::class, [
-                'disabled' => true,
-                'label' => 'mon adresse email' 
-            ])
-            ->add('firstname', TextType::class, [
-                'disabled' => true,
-                'label' => 'mon penom'
-            ])
-            ->add('lastname', TextType::class, [
-                'disabled' => true,
-                'label' => 'mon nom'
-            ])
+           
             ->add('old_password', PasswordType::class, [
-                'label' => 'mon mot de passe actuelle ',
-                'mapped' => false,
-                'attr' => [
-                    'placeholder' => 'veuillez saisir votre mot de passe actuelle'
-                ]
+                'label' => 'ancien mot de passe',
+                'mapped' => false,                
             ])
-            ->add('new_plainPassword', RepeatedType::class, [
+            ->add('new_password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'mapped' => false,
-                'invalid_message' => 'Le mot de passe et la confirmation doivent etre identique.',
+                'invalid_message' => 'mots de passe non identique ',
                 'required' => true,
-                'first_options' => ['label' => 'Votre nouveau mot de passe',
-                'attr' => [
-                    'placeholder' => 'Nouveau mot de passe',
-                    'label' => 'Nouveau Mot de passe'
+                'first_options' => 
+                ['label' => 'Nouveau mot de passe',
                 ],
+                'second_options' => ['label' => 'Confirmation du nouveau mot de passe',
                 ],
-                'second_options' => ['label' => 'Confirmez Votre nouveau Mot de passe',
-                'attr' => [
-                    'placeholder' => 'Confirmation du nouveau Mot de passe',
-                    'label' => 'Confirmez nouveau votre Mot de passe'
-                ]],
 
             ])
             ->add('submit', SubmitType::class, [

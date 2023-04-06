@@ -1,8 +1,10 @@
 security:
+
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
     
-    App\Entity\User: 'auto'
+        App\Entity\User: 'auto'
+    #Auto pour utiliser la meilleurs methode de chiffrement disponible
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         # used to reload user from session & other features (e.g. switch_user)

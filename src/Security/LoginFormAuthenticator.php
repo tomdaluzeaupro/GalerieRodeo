@@ -15,6 +15,9 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
+// Ce fichier LoginFormAuthenticator.php crée une classe LoginFormAuthenticator qui étend AbstractLoginFormAuthenticator,
+// Cette classe utilise le système d'authentification "Passport" pour gérer les informations d'authentification et les badges associés.
+
 class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
@@ -46,7 +49,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // For example:
+        // For example: 
         return new RedirectResponse($this->urlGenerator->generate('account'));
      
     }

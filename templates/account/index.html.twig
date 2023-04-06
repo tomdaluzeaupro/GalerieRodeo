@@ -3,11 +3,8 @@
 {% block title %}Mon compte - Galerie Rodeo{% endblock %}
 
 {% block content %}
-<h1>Mon compte </h1>
-Bienvenus Dans vote compte  {{ app.user.firstname }} !
-<br>
- C'est dan cette page que vous allez pouvoir gérer toutes vos infomations personnelle
- <hr>
+<h1>{{ app.user.firstname }}</h1>
+<p>Votre compte personnel</p>
 <a href="{{ path('account_password') }}">Modifier mon mot de passe </a>
  - Ajouter mes adresses
  - mes commandes
